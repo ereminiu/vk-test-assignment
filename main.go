@@ -9,7 +9,6 @@ import (
 
 var in = bufio.NewReader(os.Stdin)
 var out = bufio.NewWriter(os.Stdout)
-var debugOut = bufio.NewWriter(os.Stderr)
 
 const INF = int(1e9 + 7)
 
@@ -89,10 +88,4 @@ func main() {
 		fmt.Fprintln(out, path[i].X, path[i].Y)
 	}
 	fmt.Fprintln(out, ".")
-}
-
-//lint:ignore U1000 aboba
-func debug(format string, args ...any) {
-	defer debugOut.Flush()
-	fmt.Fprintf(debugOut, format, args...)
 }
